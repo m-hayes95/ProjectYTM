@@ -191,6 +191,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerVisual
       objectReference: {fileID: 0}
+    - target: {fileID: 6024899996280613204, guid: 1c5dda3c7cd3cf742afcade5419faeab,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 39fedb466fa035a4182fd7d928129d8e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -466,9 +471,10 @@ GameObject:
   m_Component:
   - component: {fileID: 576063354}
   - component: {fileID: 576063353}
+  - component: {fileID: 576063355}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -485,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da4d07d52e6b47458e6f2b34883ccfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMoveSpeed: 7
 --- !u!4 &576063354
 Transform:
   m_ObjectHideFlags: 0
@@ -501,6 +508,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &576063355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576063352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e16c65241a76140bbf77c664d686a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &713252084
 GameObject:
   m_ObjectHideFlags: 0
