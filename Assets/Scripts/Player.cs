@@ -5,38 +5,16 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
-    //player speed
+    //player speed & ref to game input script
     [SerializeField] private float playerMoveSpeed = 7f;
+    [SerializeField] private GameInput gameInput;
+
     //set player is walking for PlayerAnimation ref
     private bool playerIsWalking;
     
     private void Update()
     {
-        //assign new vector for player movement.
-        //using vector 2 as game only has x and y movement
-        Vector2 inputVector = new Vector2(0, 0);
-
-        //get inputs for new vector
-        if (Input.GetKey(KeyCode.W))
-        {
-            inputVector.y = +1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            inputVector.y = -1;
-        }
-        if(Input.GetKey(KeyCode.D))
-        {
-            inputVector.x = +1;
-        }
-        if(Input.GetKey(KeyCode.A)) 
-        {
-            inputVector.x = -1;
-        } 
-        
-
-        //normalise the new vector so moving across mutliple axis is the same speed as moving across a single axis
-        inputVector = inputVector.normalized;
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();  
 
         //translate the vector 2 input into vector 3
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
