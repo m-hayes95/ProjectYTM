@@ -40,7 +40,11 @@ public class Player : MonoBehaviour
         //use the inputs for moving the game object world position, using the translate vector 3
         transform.position += moveDir * playerMoveSpeed * Time.deltaTime;
 
+        //change look at position for player character, using the moveDir variable as forward ref
+        float rotateSpeed = 20f;
+        transform.forward = Vector3.Slerp (transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+
         //check what input is beign assigned to input vector temp var
-        Debug.Log(inputVector);
+        //Debug.Log(inputVector);
     }
 }
